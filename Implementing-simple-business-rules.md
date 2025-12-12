@@ -71,7 +71,7 @@ Entity Employee
 The following business rules are similar to data validations, but actually act more like action permissions.
 Instead of checking if a certain data value *is valid or not*, they just block certain operations depending on the context.
 Examples of the following concepts are available in a unit testing DSL script
-[Validations.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/Validations.rhe).
+[Validations.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp.Shared/DslScripts/Validations.rhe).
 
 * `Lock` - Deny update and delete of the entity records, for records in a certain state (provided by a filter).
 * `LockProperty` - Deny update of a property, for records in a certain state.
@@ -116,9 +116,9 @@ Similar features and alternatives:
 * `CreationTime` - Automatically enters time when the records was created.
 * `ModificationTimeOf` - Automatically enters time when some given property was last updated.
 
-Code examples for **DefaultValue** are available in DSL script [DefaultValueTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/DefaultValueTest.rhe) script.
+Code examples for **DefaultValue** are available in DSL script [DefaultValueTest.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp.Shared/DslScripts/DefaultValueTest.rhe) script.
 
-Code examples for **AutoCode**, **CreationTime** and **ModificationTimeOf** are available in DSL script [SimpleBusinessLogic.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/SimpleBusinessLogic.rhe) script.
+Code examples for **AutoCode**, **CreationTime** and **ModificationTimeOf** are available in DSL script [SimpleBusinessLogic.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp.Shared/DslScripts/SimpleBusinessLogic.rhe) script.
 
 In the following example, the book codes are generated automatically, using a 3-digit code format
 with the prefix "BOOK" (BOOK001, BOOK002, etc.), and the user cannot enter or change the codes. 
@@ -175,13 +175,13 @@ See [Logging data changes and auditing](Logging#logging-data-changes-and-auditin
     with an optional parameter `ItemID`.
     It returns all active items and additionally the item with the given ID.
     This is a common pattern for lookup that needs to display the current item whether it is active or not.
-  * Code example is available in DSL script [SimpleBusinessLogic.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/SimpleBusinessLogic.rhe).
+  * Code example is available in DSL script [SimpleBusinessLogic.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp.Shared/DslScripts/SimpleBusinessLogic.rhe).
 
 * `PessimisticLocking` - Enables automatic verification of explicit client locks when saving a record. A user can change a records only when there is no ExclusiveLock from another user on this record. When editing detail records, only master needs to be locked.
   * A client application can manage the locks with actions Common.SetLock and Common.ReleaseLock, with parameters ResourceType (full entity name) and ResourceID (GUID).
-  * Code example is available in DSL script [PessimisticLocking.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp/DslScripts/PessimisticLocking.rhe).
+  * Code example is available in DSL script [PessimisticLocking.rhe](https://github.com/Rhetos/Rhetos/blob/master/test/CommonConcepts.TestApp.Shared/DslScripts/PessimisticLocking.rhe).
 
 ## See also
 
 Examples of many DSL concepts are available in the unit testing setup DSL script in the
-Rhetos framework source folder [CommonConcepts\CommonConceptsTest\DslScripts](https://github.com/Rhetos/Rhetos/tree/master/test/CommonConcepts.TestApp/DslScripts).
+Rhetos framework source folder [CommonConcepts\CommonConceptsTest\DslScripts](https://github.com/Rhetos/Rhetos/tree/master/test/CommonConcepts.TestApp.Shared/DslScripts).
